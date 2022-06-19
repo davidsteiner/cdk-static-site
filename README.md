@@ -16,6 +16,11 @@ SSL certificate.
 
 ## Pre-requisites
 
+This construct works with recent versions of CDK v2. There are similar constructs
+on PyPI for v1 - one of the motivations for this package was to support v2.
+
+If you are not familiar with CDK, have a read [here](https://aws.amazon.com/cdk/).
+
 Registering a domain name, creating the hosted zone in Route 53 and creating the SSL
 certificate are not in scope for this construct. These can be created manually or
 through other automated ways on AWS.

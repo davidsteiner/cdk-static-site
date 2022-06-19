@@ -12,6 +12,8 @@ from constructs import Construct
 
 
 class StaticSite(Construct):
+    """CDK construct for the infrastructure and deployment of static websites."""
+
     def __init__(
         self,
         *,
@@ -23,6 +25,20 @@ class StaticSite(Construct):
         domain_certificate_arn: str,
         **kwargs,
     ):
+        """
+        Create the infrastructure for the static website.
+
+        Args:
+            scope: The scope in which to define this construct.
+            construct_id: The scoped construct ID.
+            site_domain_name: The domain name where this site will be hosted.
+            hosted_zone_id: The ID of the hosted zone created for the domain.
+                This should be created beforehand either manually or through CDK/CloudFormation.
+            hosted_zone_name: The name of the hosted zone created for the domain.
+            domain_certificate_arn: The ARN of the SSL certificate created in AWS Certificate Manager.
+                Note, this needs to be created in na-east-1.
+            **kwargs:
+        """
         super().__init__(scope, construct_id, **kwargs)
 
         self._bucket = self._create_site_bucket(site_domain_name)

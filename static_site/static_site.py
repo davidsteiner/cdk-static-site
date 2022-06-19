@@ -82,7 +82,9 @@ class StaticSite(Construct):
         site_domain_name: str,
         certificate: acm.ICertificate,
     ) -> cloudfront.IDistribution:
+        # function_name is supplied to apply the workaround for https://github.com/aws/aws-cdk/issues/15523
         function_name = f"RouterFunction{self.node.addr}"
+
         function_code = Path(__file__).parent / "router.js"
         router_function = cloudfront.Function(
             self,

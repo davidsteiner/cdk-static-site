@@ -36,7 +36,7 @@ class StaticSite(Construct):
                 This should be created beforehand either manually or through CDK/CloudFormation.
             hosted_zone_name: The name of the hosted zone created for the domain.
             domain_certificate_arn: The ARN of the SSL certificate created in AWS Certificate Manager.
-                Note, this needs to be created in na-east-1.
+                Note, this needs to be created in us-east-1.
             **kwargs:
         """
         super().__init__(scope, construct_id, **kwargs)

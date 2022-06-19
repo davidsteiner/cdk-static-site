@@ -89,7 +89,7 @@ class StaticSite(Construct):
         router_function = cloudfront.Function(
             self,
             function_name,
-            code=cloudfront.FunctionCode.from_file(function_code.as_posix()),
+            code=cloudfront.FunctionCode.from_file(file_path=function_code.as_posix()),
             function_name=function_name,
         )
 
